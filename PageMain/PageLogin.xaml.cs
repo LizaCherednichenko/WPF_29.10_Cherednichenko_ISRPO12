@@ -57,5 +57,10 @@ namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
                     "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void btnRegIn_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.Navigate(new PageCreateAcc());
+        }
     }
 }

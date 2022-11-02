@@ -16,7 +16,7 @@
             <PasswordBox x:Name="psbPassword" Style="{StaticResource PasswordBox}"/>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Регистрация" Style="{StaticResource ButtonY}"/>
+                <Button x:Name="btnRegIn" Content="Регистрация" Style="{StaticResource ButtonY}" Click="btnRegIn_Click"/>
                 <Button x:Name="btnIn" Content="Войти" Style="{StaticResource ButtonG}" Click="btnIn_Click"/>
             </StackPanel>
             
