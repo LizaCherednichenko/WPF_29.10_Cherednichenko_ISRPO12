@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_29._10_Cherednichenko_ISRPO12.ApplicationData;
 
 namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
 {
@@ -23,6 +24,38 @@ namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
         public PageLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnIn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var userObj = AppConnect.model0db.User.FirstOrDefault(x => x.login == txbLogin.Text && x.password == psbPassword.Password);
+                if (userObj == null)
+                {
+                    MessageBox.Show("Такого пользователя нет!", "Ошибка авторизации!",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    switch (userObj.IdRole)
+                    {
+                        case 1:
+                            MessageBox.Show("Здравствуйте, Администратор " + userObj.name + "!",
+                                "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+                        case 2:
+                            MessageBox.Show("Здравствуйте, Ученик " + userObj.name + "!",
+                                "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Ошибка" + Ex.Message.ToString() + "Критическая ошибка приложения!",
+                    "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

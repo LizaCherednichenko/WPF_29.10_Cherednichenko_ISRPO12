@@ -11,13 +11,13 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="введите логин" Style="{StaticResource Label}"/>
-            <TextBox Text=" " Style="{StaticResource TextBox}"/>
+            <TextBox x:Name="txbLogin"  Text=" " Style="{StaticResource TextBox}"/>
             <Label Content="введите пароль" Style="{StaticResource Label}"/>
-            <PasswordBox Style="{StaticResource PasswordBox}"/>
+            <PasswordBox x:Name="psbPassword" Style="{StaticResource PasswordBox}"/>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Регистрация" Style="{StaticResource ButtonY}"/>
-                <Button Content="Войти" Style="{StaticResource ButtonG}"/>
+                <Button x:Name="btnIn" Content="Войти" Style="{StaticResource ButtonG}" Click="btnIn_Click"/>
             </StackPanel>
             
         </StackPanel>
