@@ -30,5 +30,21 @@ namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
         {
             AppFrame.frameMain.GoBack();
         }
+
+        private void psbPass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (psbPass.Password != txbPass.Text)
+            {
+                btnCreate.IsEnabled = false;
+                psbPass.Background = Brushes.LightCoral;
+                psbPass.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                btnCreate.IsEnabled = true;
+                psbPass.Background = Brushes.LightGreen;
+                psbPass.BorderBrush = Brushes.Green;
+            }
+        }
     }
 }

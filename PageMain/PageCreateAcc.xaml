@@ -23,14 +23,14 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Label Content="Введите пароль" Style="{StaticResource Label}"/>
                 <StackPanel Orientation="Vertical">
-                    <TextBox Text="" Style="{StaticResource TextBox}"/>
-                    <PasswordBox Style="{StaticResource PasswordBox}"/>
+                    <TextBox x:Name="txbPass"  Text="" Style="{StaticResource TextBox}"/>
+                    <PasswordBox x:Name="psbPass" Style="{StaticResource PasswordBox}" PasswordChanged="psbPass_PasswordChanged"/>
                 </StackPanel>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnBack" Content="Назад" Style="{StaticResource ButtonB}" Click="btnBack_Click"/>
-                <Button Content="Создать" Style="{StaticResource ButtonG}"/>
+                <Button x:Name="btnCreate"  Content="Создать" Style="{StaticResource ButtonG}" IsEnabled="False"/>
             </StackPanel>
         </StackPanel>
     </Grid>
