@@ -26,6 +26,8 @@ namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
             InitializeComponent();
         }
 
+        
+
         private void btnIn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -43,10 +45,12 @@ namespace WPF_29._10_Cherednichenko_ISRPO12.PageMain
                         case 1:
                             MessageBox.Show("Здравствуйте, Администратор " + userObj.name + "!",
                                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            AppFrame.frameMain.Navigate(new PageAdmin.PageMenuAdmin());
                             break;
                         case 2:
                             MessageBox.Show("Здравствуйте, Ученик " + userObj.name + "!",
                                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            AppFrame.frameMain.Navigate(new PageStudent.PageAccountStudent());
                             break;
                     }
                 }
